@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  ProductHuntApp
-//
-//  Created by Eldar Adelshin on 02/02/2019.
-//  Copyright © 2019 Eldar Adelshin. All rights reserved.
-//
 
 import UIKit
 

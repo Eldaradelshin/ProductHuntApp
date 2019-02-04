@@ -4,6 +4,8 @@ import UIKit
 
 class PostsViewController: UIViewController {
     
+    private let refreshControl = UIRefreshControl()
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topicButton: UIButton!
     
@@ -12,12 +14,20 @@ class PostsViewController: UIViewController {
     
     var postsToDIsplay: [Post] = []
     var topicToDisplay: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if topicToDisplay == "" {
         defaultSetup()
         topicButton.setTitle("Tech", for: .normal)
         } else { self.tableView.reloadData() }
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Loading new posts...")
         self.tableView.rowHeight = 150
     }
     
@@ -45,21 +55,38 @@ class PostsViewController: UIViewController {
     }
     
     func setupPosts(slug: String) {
-        let requestService = RequestService()
-        requestService.getPostsForTopic(topicSlug: slug) { [weak self] recievedPosts in
+        
+        RequestService.shared.getPostsForTopic(topicSlug: slug) { [weak self] recievedPosts in
             self!.postsToDIsplay = recievedPosts
             self!.tableView.reloadData()
+            if self!.refreshControl.isRefreshing {
+                print("Updated View")
+                self!.refreshControl.endRefreshing()
+            }
         }
     }
     
     func defaultSetup(){
-    let requestService = RequestService()
-        requestService.getPostsForTopic(topicSlug: "tech") { [weak self] recievedPosts in
+    
+        RequestService.shared.getPostsForTopic(topicSlug: "tech") { [weak self] recievedPosts in
             self!.postsToDIsplay = recievedPosts
             //print("Было загружено: \(self!.postsToDIsplay.count)")
             self!.tableView.reloadData()
-            
+            if self!.refreshControl.isRefreshing {
+                print("Updated View")
+                self!.refreshControl.endRefreshing()
+            }
         }
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        // Fetch Data
+        if self.topicToDisplay == "" {
+            defaultSetup()
+        } else {
+            setupPosts(slug: topicToDisplay.lowercased())
+        }
+        self.tableView.reloadData()
     }
     
 }
