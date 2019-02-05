@@ -11,7 +11,6 @@
 		4046CFF422063553004D0BA6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046CFF322063553004D0BA6 /* Post.swift */; };
 		4046CFF6220637B6004D0BA6 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046CFF5220637B6004D0BA6 /* Thumbnail.swift */; };
 		4046CFF8220638EC004D0BA6 /* PostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046CFF7220638EC004D0BA6 /* PostsResponse.swift */; };
-		4046CFFE22063F85004D0BA6 /* NetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046CFFD22063F85004D0BA6 /* NetworkingExtensions.swift */; };
 		4046D0012206433A004D0BA6 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046D0002206433A004D0BA6 /* PostsViewController.swift */; };
 		4046D0032206467F004D0BA6 /* PostViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046D0022206467F004D0BA6 /* PostViewControllerExtensions.swift */; };
 		4046D006220647F6004D0BA6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4046D005220647F6004D0BA6 /* PostTableViewCell.swift */; };
@@ -28,6 +27,7 @@
 		405BF4092205B9B4002F10AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 405BF4082205B9B4002F10AB /* Assets.xcassets */; };
 		405BF40C2205B9B4002F10AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405BF40A2205B9B4002F10AB /* LaunchScreen.storyboard */; };
 		405BF4192205D0DE002F10AB /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405BF4182205D0DE002F10AB /* RequestService.swift */; };
+		407AE7C32209A54100111D6D /* NetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407AE7C22209A54100111D6D /* NetworkingExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,6 @@
 		4046CFF322063553004D0BA6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4046CFF5220637B6004D0BA6 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		4046CFF7220638EC004D0BA6 /* PostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsResponse.swift; sourceTree = "<group>"; };
-		4046CFFD22063F85004D0BA6 /* NetworkingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkingExtensions.swift; path = ../../../../../../.Trash/NetworkingExtensions.swift; sourceTree = "<group>"; };
 		4046D0002206433A004D0BA6 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		4046D0022206467F004D0BA6 /* PostViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewControllerExtensions.swift; sourceTree = "<group>"; };
 		4046D005220647F6004D0BA6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		405BF40B2205B9B4002F10AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		405BF40D2205B9B4002F10AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		405BF4182205D0DE002F10AB /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		407AE7C22209A54100111D6D /* NetworkingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingExtensions.swift; sourceTree = "<group>"; };
 		6424DD475CA9E4F3FFAACF6A /* Pods-ProductHuntApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductHuntApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductHuntApp/Pods-ProductHuntApp.release.xcconfig"; sourceTree = "<group>"; };
 		87A7C58D0EC80F15FD75C7E4 /* Pods_ProductHuntApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductHuntApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,8 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				405BF4182205D0DE002F10AB /* RequestService.swift */,
-				4046CFFD22063F85004D0BA6 /* NetworkingExtensions.swift */,
 				4046D00722075C20004D0BA6 /* ImageRequestService.swift */,
+				407AE7C22209A54100111D6D /* NetworkingExtensions.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -337,12 +337,12 @@
 				4046D013220768FE004D0BA6 /* Topic.swift in Sources */,
 				4046CFF8220638EC004D0BA6 /* PostsResponse.swift in Sources */,
 				4046D011220768D1004D0BA6 /* TopicsResponse.swift in Sources */,
-				4046CFFE22063F85004D0BA6 /* NetworkingExtensions.swift in Sources */,
 				4046D00822075C20004D0BA6 /* ImageRequestService.swift in Sources */,
 				4046D00F220767B7004D0BA6 /* TopicCell.swift in Sources */,
 				4046D016220794AF004D0BA6 /* DetailViewController.swift in Sources */,
 				4046D00B220763CF004D0BA6 /* TopicsViewController.swift in Sources */,
 				405BF4192205D0DE002F10AB /* RequestService.swift in Sources */,
+				407AE7C32209A54100111D6D /* NetworkingExtensions.swift in Sources */,
 				4046D0012206433A004D0BA6 /* PostsViewController.swift in Sources */,
 				405BF4022205B9B2002F10AB /* AppDelegate.swift in Sources */,
 				4046D0182207A50B004D0BA6 /* Screenshot.swift in Sources */,
